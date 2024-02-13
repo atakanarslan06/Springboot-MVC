@@ -1,6 +1,7 @@
 package com.mvc.web.controller;
 
 import com.mvc.web.dto.ClubDto;
+import com.mvc.web.models.Club;
 import com.mvc.web.service.ClubService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,5 +22,11 @@ public class ClubController {
         model.addAttribute("clubs", clubs);
         return "clubs-list";
 
+    }
+    @GetMapping("/clubs/new")
+    public String createClubForm(Model model){
+        Club club = new Club();
+        model.addAttribute("club", club);
+        return "clubs-create";
     }
 }
