@@ -48,6 +48,6 @@ public class ClubController {
     public String updateClub(@PathVariable("clubId") Long clubId, @ModelAttribute("club") ClubDto club ){
         club.setId(clubId);
         clubService.updateClub(club);
-        return null;
+        return "redirect:/clubs";
     }
 }
